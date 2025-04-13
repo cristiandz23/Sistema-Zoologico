@@ -19,4 +19,11 @@ public class Pais {
         return codigoIso;
     }
 
+    @Override
+    public String toString() {
+        return nombre;
+    }
+    
+    
+
 }

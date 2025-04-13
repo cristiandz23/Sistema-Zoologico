@@ -32,4 +32,11 @@ public class Carnivoro extends Mamifero {
         double comida = peso * especie.getPorcentajePesoCarnivoro() * (1 + porcentajeASumar);
         return comida;
     }
+
+    @Override
+    public String toString() {
+        return "Carnivoro{" + this.edad + "peso "+ this.peso+ '}';
+    }
+    
+    
 }
