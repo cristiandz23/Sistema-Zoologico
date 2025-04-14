@@ -253,8 +253,9 @@ public class IngresarAnimalView extends javax.swing.JFrame {
     }//GEN-LAST:event_cmbEspeciesActionPerformed
 
     private void btnIngresarAnimalActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnIngresarAnimalActionPerformed
-        this.cargarAnimal();
-        limpiarCampos();
+        if(this.cargarAnimal()){
+            JOptionPane.showMessageDialog(null,"Nuevo animal cargado correctamente");  
+        }limpiarCampos();
     }//GEN-LAST:event_btnIngresarAnimalActionPerformed
 
     private void txtPesoKeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_txtPesoKeyTyped
@@ -328,28 +329,31 @@ public class IngresarAnimalView extends javax.swing.JFrame {
         txtPeso.setText("");
         cmbEspecies.setSelectedIndex(-1);
         cmbPaises.setSelectedIndex(-1);
+        cmbSectores.setSelectedIndex(-1);
     }
 
-    public void cargarAnimal() {
-
-        Especie especie = (Especie) cmbEspecies.getSelectedItem();
-        Pais pais = (Pais) cmbPaises.getSelectedItem();
-        Sector sector = (Sector) cmbSectores.getSelectedItem();
-        int edad = Integer.parseInt(txtEdad.getText());
-        double peso = Double.parseDouble(txtPeso.getText());
+    public boolean cargarAnimal() {
 
         try {
+            Especie especie = (Especie) cmbEspecies.getSelectedItem();
+            Pais pais = (Pais) cmbPaises.getSelectedItem();
+            Sector sector = (Sector) cmbSectores.getSelectedItem();
+            int edad = Integer.parseInt(txtEdad.getText());
+            double peso = Double.parseDouble(txtPeso.getText());
             if (especie.getTipoAlimentacion() == TipoAlimentacion.CARNIVORO) {
                 Carnivoro animal = new Carnivoro(edad, peso, especie, sector, pais);
                 Controlador.agregarAnimal(animal);
+                return true;
             } else if (especie.getTipoAlimentacion() == TipoAlimentacion.HERBIVORO) {
                 double valorFijo = Double.parseDouble(txtValorFijo.getText());
                 Herbivoro animal = new Herbivoro(edad, peso, especie, sector, valorFijo, pais);
                 Controlador.agregarAnimal(animal);
+                return true;
             }
         } catch (Exception e) {
             JOptionPane.showMessageDialog(null, "Debe ingresar todos los campos un valor valido");
         }
+        return false;
 
     }
 

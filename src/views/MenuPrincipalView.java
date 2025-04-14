@@ -17,11 +17,11 @@ public class MenuPrincipalView extends javax.swing.JFrame {
         jLabel3 = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
-        setMaximumSize(new java.awt.Dimension(1200, 1000));
-        setMinimumSize(new java.awt.Dimension(1200, 1000));
-        setPreferredSize(new java.awt.Dimension(1200, 1000));
+        setMaximumSize(new java.awt.Dimension(1000, 625));
+        setMinimumSize(new java.awt.Dimension(600, 500));
+        setPreferredSize(new java.awt.Dimension(1000, 625));
         setResizable(false);
-        setSize(new java.awt.Dimension(1200, 1000));
+        setSize(new java.awt.Dimension(1000, 625));
         getContentPane().setLayout(null);
 
         jPanel1.setMaximumSize(new java.awt.Dimension(1200, 1000));
@@ -55,8 +55,9 @@ public class MenuPrincipalView extends javax.swing.JFrame {
         jButton1.setBounds(330, 300, 390, 60);
 
         jLabel3.setIcon(new javax.swing.ImageIcon("C:\\Users\\crist\\Desktop\\3ro\\desarrollo de software\\Ejericios\\Ejercicio-3\\dsw2025ej1\\images\\ingresar_animal.jpg")); // NOI18N
-        jLabel3.setMaximumSize(new java.awt.Dimension(1200, 1200));
+        jLabel3.setMaximumSize(new java.awt.Dimension(1200, 1000));
         jLabel3.setMinimumSize(new java.awt.Dimension(1200, 1000));
+        jLabel3.setPreferredSize(new java.awt.Dimension(1200, 1000));
         jPanel1.add(jLabel3);
         jLabel3.setBounds(0, 0, 1120, 590);
 
