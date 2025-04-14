@@ -12,5 +12,7 @@ public class Program {
         Persistencia.inicializar();
         MenuPrincipalView view = new MenuPrincipalView();
         view.setVisible(true);
+        view.setLocationRelativeTo(null);
+
     }
 }
